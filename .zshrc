@@ -6,7 +6,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 source ~/.bash_custom
 	
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/compy/.oh-my-zsh"
+  export ZSH=/home/ubuntu/.oh-my-zsh
   ZSH_DISABLE_COMPFIX=true
  ZSH_THEME="clean" 
 # ZSH_THEME="xiong-chiamiov-plus" 
