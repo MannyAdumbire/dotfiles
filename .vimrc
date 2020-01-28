@@ -7,9 +7,12 @@ let mapleader=" "
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
 
+set tags=tags;/
 
 execute pathogen#infect()
 
+"Vdebug
+let g:vdebug_features = { 'max_children': 512 }
 
 "Settings
 filetype plugin indent on

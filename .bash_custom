@@ -4,6 +4,7 @@
 set -o vi
 
 #export SHELL='/bin/zsh'
+export PAGER=vi
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 export wptheme='/var/www/html/mannadu/wp-content/themes/mannadu'
 export PATH=$PATH:~/Scripts
