@@ -28,6 +28,8 @@ set nowrap
 set undolevels=1000
 set undoreload=10
 set maxfuncdepth=1000 "Show more elements in container objects when debugging
+set autochdir " As per https://stackoverflow.com/questions/13239464/create-a-new-file-in-the-directory-of-the-open-file-in-vim
+
 
 "--------------------------------------------------   MAPPINGS --------------------------------------------------
 
