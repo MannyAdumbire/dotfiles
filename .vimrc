@@ -1,12 +1,13 @@
 "Config File for vim
 set nocompatible
-
+set cursorline
 let mapleader=" "
 
-
+"Enable find-manpage
+runtime! ftplugin/man.vim
+"
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
-
 
 execute pathogen#infect()
 
