@@ -5,12 +5,20 @@ let mapleader=" "
 
 "Enable find-manpage
 runtime! ftplugin/man.vim
+
+"needed to load phpactor as per -> https://raw.githubusercontent.com/phpactor/phpactor/develop/doc/phpactor.txt
+autocmd FileType php setlocal omnifunc=phpactor#Complete
+
+
+"
 "
 " To disable a plugin, add it's bundle name to the following list
-let g:pathogen_disabled = []
+"let g:pathogen_disabled = []
 
-execute pathogen#infect()
+"execute pathogen#infect()
 
+"all plug#begin('~/.vim/bundle')
+"all plug#end()
 
 "Settings
 filetype plugin indent on
@@ -52,17 +60,17 @@ map <leader>fsql :set ft=sql
 
 "Auto run sass watch when scss is opened
 augroup css
-"replace extension
-let b:filename=substitute( @%, '\..*', "" , "g")
-au BufWrite *.scss exe "!sass -q ".@% b:filename.".css"
+	"replace extension
+	let b:filename=substitute( @%, '\..*', "" , "g")
+	au BufWrite *.scss exe "!sass -q ".@% b:filename.".css"
 augroup END 
 
 
 "save and source vim scripts
 augroup myvim 
-au  BufNewFile,BufRead *.vim nnoremap <leader>ws  :w! \| :source %<Enter> 
-"syntax highlighting for unknown file extensions
-au  BufRead *.vue set syntax=html
+	au  BufNewFile,BufRead *.vim nnoremap <leader>ws  :w! \| :source %<Enter> 
+	"syntax highlighting for unknown file extensions
+	au  BufRead *.vue set syntax=html
 augroup END
 
 "Plugin Options
@@ -77,3 +85,35 @@ autocmd FileType html,css,scss,javascript EmmetInstall
 if &t_Co == '8'
 	let g:airline_theme='hybrid'
 endif
+
+
+"phpactor mappings 
+augroup PhpactorMappings
+	au!
+	au FileType php nmap <buffer> <Leader>u :PhpactorImportClass<CR>
+	au FileType php nmap <buffer> <Leader>e :PhpactorClassExpand<CR>
+	au FileType php nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
+	au FileType php nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
+	au FileType php nmap <buffer> <Leader>nn :PhpactorNavigate<CR>
+	au FileType php,cucumber nmap <buffer> <Leader>o
+				\ :PhpactorGotoDefinition<CR>
+	au FileType php,cucumber nmap <buffer> <Leader>Oh
+				\ :PhpactorGotoDefinitionHsplit<CR>
+	au FileType php,cucumber nmap <buffer> <Leader>Ov
+				\ :PhpactorGotoDefinitionVsplit<CR>
+	au FileType php,cucumber nmap <buffer> <Leader>Ot
+				\ :PhpactorGotoDefinitionTab<CR>
+	au FileType php nmap <buffer> <Leader>K :PhpactorHover<CR>
+	au FileType php nmap <buffer> <Leader>tt :PhpactorTransform<CR>
+	au FileType php nmap <buffer> <Leader>cc :PhpactorClassNew<CR>
+	au FileType php nmap <buffer> <Leader>ci :PhpactorClassInflect<CR>
+	au FileType php nmap <buffer> <Leader>fr :PhpactorFindReferences<CR>
+	au FileType php nmap <buffer> <Leader>mf :PhpactorMoveFile<CR>
+	au FileType php nmap <buffer> <Leader>cf :PhpactorCopyFile<CR>
+	au FileType php nmap <buffer> <silent> <Leader>ee
+				\ :PhpactorExtractExpression<CR>
+	au FileType php vmap <buffer> <silent> <Leader>ee
+				\ :<C-u>PhpactorExtractExpression<CR>
+	au FileType php vmap <buffer> <silent> <Leader>em
+				\ :<C-u>PhpactorExtractMethod<CR>
+augroup END

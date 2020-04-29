@@ -2,13 +2,8 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
-#My CUSTOM Stuff
-source ~/.bash_custom
-	
-# Path to your oh-my-zsh installation.
-  export ZSH="/home/compy/.oh-my-zsh"
-  ZSH_DISABLE_COMPFIX=true
- ZSH_THEME="clean" 
+  ZSH_THEME="clean" 
+ 
 # ZSH_THEME="xiong-chiamiov-plus" 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -69,7 +64,15 @@ source ~/.bash_custom
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git vi-mode tmux vagrant homestead)
 
-source $ZSH/oh-my-zsh.sh
+#My CUSTOM Stuff
+if [[ -r $HOME/.oh-my-zsh ]]
+  export ZSH="/home/compy/.oh-my-zsh"
+else
+fi
+
+
+ZSH_DISABLE_COMPFIX=true
+
 #
 # User configuration
 

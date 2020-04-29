@@ -9,7 +9,7 @@ export GIT_EDITOR="vim"
 #Aliases
 alias cdnodemods='cd /usr/local/lib/node_modules'
 alias ll='ls -al'
-
+alias dmesg='dmesg --color=always --time-format ctime | less -R'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
