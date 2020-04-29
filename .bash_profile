@@ -31,6 +31,8 @@ john_doe () {
 	export PS1='>'
 }
 
+#GIT stuff
+ git config --global --replace-all diff.tool vimdiff
 
 
 #can't rememeber what this is for..
