@@ -32,12 +32,12 @@ set shiftwidth=4
 set hls
 set ic
 set history=10000	  
-set nowrap
+"set nowrap
 set undolevels=1000
 set undoreload=10
 set maxfuncdepth=1000 "Show more elements in container objects when debugging
 set autochdir "Auto cd to current buffer, SEE -> https://stackoverflow.com/questions/13239464/create-a-new-file-in-the-directory-of-the-open-file-in-vim
-
+set tags=tags;/ "Search parent for tags https://stackoverflow.com/questions/5017500/vim-difficulty-setting-up-ctags-source-in-subdirectories-dont-see-tags-file-i
 
 "--------------------------------------------------   MAPPINGS --------------------------------------------------
 
@@ -55,6 +55,8 @@ nmap <leader>dsh  50i-3a 50a-F a
 nmap <leader>dir  tyiW exe"r!ls ".@t  
 "Set filetype to SQL`
 map <leader>fsql :set ft=sql 
+"Toggle NERDtree ( directory toggle (dt) ) 
+map <leader>dt :NERDTreeToggle
 
 "-----AUto-Commands----- 
 
