@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 #load bash_profile if it exists
 if [[ -r $HOME/.bash_profile ]] then
-	source .bash_profile
+	source $HOME/.bash_profile
 fi
 
 # Set name of the theme to load --- if set to "random", it will
