@@ -9,6 +9,11 @@ if [[ -r $HOME/.bash_profile ]] then
 	source $HOME/.bash_profile
 fi
 
+#load bash_custom if it exists
+if [[ -r $HOME/.bash_custom ]] then
+	source $HOME/.bash_custom
+fi
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
