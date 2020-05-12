@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -8,6 +5,13 @@ export ZSH="$HOME/.oh-my-zsh"
 if [[ -r $HOME/.bash_profile ]] then
 	source $HOME/.bash_profile
 fi
+# Load composer bins
+if [[ -d $HOME/vendor/bin ]] then
+	PATH=$HOME/vendor/bin:$PATH
+fi
+
+# If you come from bash you might have to change your $PATH.
+ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 #load bash_custom if it exists
 if [[ -r $HOME/.bash_custom ]] then
