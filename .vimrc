@@ -24,6 +24,7 @@ autocmd FileType php setlocal omnifunc=phpactor#Complete
 filetype plugin indent on
 syntax on
 colo gruvbox
+set background=dark
 
 "Set Options
 set number
