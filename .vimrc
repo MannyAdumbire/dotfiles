@@ -23,7 +23,7 @@ autocmd FileType php setlocal omnifunc=phpactor#Complete
 "Settings
 filetype plugin indent on
 syntax on
-colo koehler
+colo gruvbox
 
 "Set Options
 set number
@@ -76,17 +76,19 @@ augroup myvim
 augroup END
 
 "Plugin Options
-let g:airline_theme='solarized_flood'
 
-"Only use Emmet on html/css files
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss,javascript EmmetInstall
-
+"AIRLINE
 "if not enough colors to show regular theme ( eg. on tty1 ) USE theme: 
-"Vim stores t_Co as a string: verified usin ------- exe "echo ".type(&t_Co) --------------------
+"Vim stores t_Co as a string: verified using ------- exe "echo ".type(&t_Co) --------------------
 if &t_Co == '8'
 	let g:airline_theme='hybrid'
 endif
+let g:airline_theme='solarized_flood'
+
+"Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,scss,javascript EmmetInstall
+
 
 
 "phpactor mappings 
