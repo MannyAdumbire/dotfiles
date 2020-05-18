@@ -88,7 +88,7 @@ let g:airline_theme='solarized_flood'
 
 "Emmet
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss,javascript EmmetInstall
+autocmd FileType html,php,css,scss,javascript EmmetInstall
 
 
 
