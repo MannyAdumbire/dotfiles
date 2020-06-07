@@ -3,5 +3,4 @@ alias plugin="$HOME/HSPH_Share/wordpress/wp-content/plugins/plugin-ecpe"
 alias refactor="$HOME/HSPH_Share/wordpress/wp-content/plugins/plugin-ecpe-redesign"
 alias theme="$HOME/HSPH_Share/wordpress/wp-content/themes/theme-main-2016-child-ecpe"
 
-export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9001 remote_host=127.0.0.1 remote
-_connect_back=0"
+export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9001 remote_host=127.0.0.1 remote _connect_back=0"

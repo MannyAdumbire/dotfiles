@@ -10,22 +10,22 @@ SAVEHIST=10000
 HISTFILE=~/.bash_history
 
 #load bash_custom if it exists
-if [[ -r $HOME/.bash_custom ]] then
-	source $HOME/.bash_custom
-fi
-
-#load bash_profile if it exists
-if [[ -r $HOME/.bash_profile ]] then
-	source $HOME/.bash_profile
-fi
-# Load composer bins
-if [[ -d $HOME/vendor/bin ]] then
-	PATH=$HOME/vendor/bin:$PATH
-fi
-
-# If you come from bash you might have to change your $PATH.
- export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+#if [[ -r $HOME/.bash_custom ]] then
+#	source $HOME/.bash_custom
+#fi
+#
+##load bash_profile if it exists
+#if [[ -r $HOME/.bash_profile ]] then
+#	source $HOME/.bash_profile
+#fi
+## Load composer bins
+#if [[ -d $HOME/vendor/bin ]] then
+#	PATH=$HOME/vendor/bin:$PATH
+#fi
+#
+## If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
 
 
 # If you come from bash you might have to change your $PATH.
@@ -98,7 +98,7 @@ ZSH_THEME="strug"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git vagrant tmux)
 
 source $ZSH/oh-my-zsh.sh
 
