@@ -22,8 +22,6 @@ alias .......='cd ../../../../../..'
 
 #Go dark
 function dimscreen () {
-  echo 10 > /sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1/intel_backlight/brightness 
-  xrandr --output eDP-1 --gamma 0.8:0.8:0.8
 }
 
 #see no user
@@ -32,7 +30,7 @@ john_doe () {
 }
 
 #GIT stuff
- git config --global --replace-all diff.tool vimdiff
+git config --global --replace-all diff.tool vimdiff
 
 
 #can't rememeber what this is for..
