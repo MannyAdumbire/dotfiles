@@ -1,8 +1,5 @@
 setopt histignorealldups sharehistory
 
-# Use emacs keybindings even if our EDITOR is set to vi
-set -o vi
-bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
@@ -10,21 +7,21 @@ SAVEHIST=10000
 HISTFILE=~/.bash_history
 
 #load bash_custom if it exists
-#if [[ -r $HOME/.bash_custom ]] then
-#	source $HOME/.bash_custom
-#fi
-#
-##load bash_profile if it exists
-#if [[ -r $HOME/.bash_profile ]] then
-#	source $HOME/.bash_profile
-#fi
-## Load composer bins
-#if [[ -d $HOME/vendor/bin ]] then
-#	PATH=$HOME/vendor/bin:$PATH
-#fi
+if [[ -r $HOME/.bash_custom ]] then
+	source $HOME/.bash_custom
+fi
+
+#load bash_profile if it exists
+if [[ -r $HOME/.bash_profile ]] then
+	source $HOME/.bash_profile
+fi
+# Load composer bins
+if [[ -d $HOME/vendor/bin ]] then
+	PATH=$HOME/vendor/bin:$PATH
+fi
 #
 ## If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
 
 
@@ -129,3 +126,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Set up the prompt
 
+set -o vi
