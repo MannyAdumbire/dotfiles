@@ -5,6 +5,7 @@ set -o vi
 #export HTML_TIDY=~/.config/htmltidy.conf
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 export GIT_EDITOR="vim"
+export EDITOR=vim
 
 #Aliases
 alias cdnodemods='cd /usr/local/lib/node_modules'
@@ -16,13 +17,14 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
 
 
 #--------------------------------------------------   FUNCTIONS -------------------------------------------------- 
 
 #Go dark
-function dimscreen () {
-}
+#function dimscreen () {
+#}
 
 #see no user
 john_doe () {
