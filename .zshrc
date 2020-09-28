@@ -1,5 +1,35 @@
-# If you come from bash you might have to change your $PATH.
+setopt histignorealldups sharehistory
+
+#Use vim keybindings ( zsh + bash notation)
+bindkey -v 
+set -o vi
+
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.bash_history
+
+#load bash_custom if it exists
+if [[ -r $HOME/.bash_custom ]] then
+	source $HOME/.bash_custom
+fi
+
+#load bash_profile if it exists
+if [[ -r $HOME/.bash_profile ]] then
+	source $HOME/.bash_profile
+fi
+# Load composer bins
+if [[ -d $HOME/vendor/bin ]] then
+	PATH=$HOME/vendor/bin:$PATH
+fi
+#
+## If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
+
+
+# If you come from bash you might have to change your $PATH.
+ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -33,7 +63,7 @@ ZSH_THEME="strug"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -68,7 +98,7 @@ ZSH_THEME="strug"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git vagrant tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,3 +127,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Set up the prompt
+
