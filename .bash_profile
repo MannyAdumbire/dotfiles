@@ -11,6 +11,7 @@ export EDITOR=vim
 alias cdnodemods='cd /usr/local/lib/node_modules'
 alias ll='ls -al'
 alias dmesg='dmesg --color=always --time-format ctime | less -R'
+alias hg='history | grep '
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
