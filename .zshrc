@@ -1,8 +1,5 @@
 setopt histignorealldups sharehistory
 
-#Use vim keybindings ( zsh + bash notation)
-bindkey -v 
-set -o vi
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
@@ -22,6 +19,12 @@ fi
 if [[ -d $HOME/vendor/bin ]] then
 	PATH=$HOME/vendor/bin:$PATH
 fi
+
+# load anacoda
+if [[ -d  "/opt/homebrew/anaconda3/bin" ]] then
+export PATH="$PATH:/opt/homebrew/anaconda3/bin"
+fi
+
 #
 ## If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -38,7 +41,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="strug"
+# ZSH_THEME="strug"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -98,7 +101,7 @@ ZSH_THEME="strug"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vagrant tmux)
+# plugins=(git vagrant tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,5 +130,25 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias hg="history | grep -i"
 # Set up the prompt
+
+#Use vim keybindings ( zsh + bash notation)
+bindkey -v 
+set -o vi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
