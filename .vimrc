@@ -7,7 +7,7 @@ let mapleader=" "
 runtime! ftplugin/man.vim
 
 "needed to load phpactor as per -> https://raw.githubusercontent.com/phpactor/phpactor/develop/doc/phpactor.txt
-autocmd FileType php setlocal omnifunc=phpactor#Complete
+"autocmd FileType php setlocal omnifunc=phpactor#Complete
 
 
 "
