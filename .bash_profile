@@ -7,6 +7,12 @@ export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu
 export GIT_EDITOR="vim"
 export EDITOR=vim
 
+# Keep lots of history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+
 #Aliases
 alias cdnodemods='cd /usr/local/lib/node_modules'
 alias ll='ls -al'
@@ -28,7 +34,7 @@ alias ........='cd ../../../../../../..'
 #}
 
 #see no user
-john_doe () {
+dev_unstuck () {
 	export PS1='>'
 }
 

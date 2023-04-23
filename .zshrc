@@ -2,8 +2,9 @@ setopt histignorealldups sharehistory
 
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=10000
-SAVEHIST=10000
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
 HISTFILE=~/.bash_history
 
 #load bash_custom if it exists
